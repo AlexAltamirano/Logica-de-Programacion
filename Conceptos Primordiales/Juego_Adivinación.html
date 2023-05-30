@@ -1,0 +1,85 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA JUEGO DE ADIVINACIÓN</h1>
+
+<script>
+	function saltarlinea() {
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarlinea();
+	}
+
+	
+
+	var numeroPensado = Math.round(Math.random()*10);
+	var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-10"));
+
+	if (numeroPensado == numeroLanzado) {
+
+		imprimir("Usted acertó");
+
+	}
+
+	else {
+
+		imprimir("Usted erró, el número pensado era " + numeroPensado);
+
+	}
+
+</script>
+
+<br>
+<br>
+1 – Crea una función de lotería que reciba un número n y sortee un número entre 0 a n, retornando ese valor. De esta forma, en vez de escribir var numeroPensado = Math.round(Math.random()*n);, escribirás var numeroPensado = sorteo(n);. Realiza esa modificación, creando una nueva función y utilízala de forma correcta.
+<br>
+<br>
+
+<script>
+	function loteria(numeroElegido) {
+		
+		return (Math.round(Math.random()*numeroElegido))
+	}
+
+	var numeroElegido = parseInt(prompt("Eliga el número de sorteo"));
+	var numeroLoteria = loteria(numeroElegido);
+	var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-" + numeroElegido));
+
+	if (numeroLoteria == numeroLanzado) {
+
+		imprimir("Usted acertó");
+
+	}
+
+	else {
+
+		imprimir("Usted erró, el número pensado era " + numeroPensado);
+
+	}
+</script>
+
+<br>
+<br>
+2 – Hacer que tu juego exhiba, cuando el usuario falle el intento, si el número lanzado era mayor o menor al número pensando por el programa.
+<br>
+<br>
+
+<script>
+
+	if (numeroLanzado > numeroPensado) {
+
+			imprimir("Numero lanzado era mayor que el del programa")
+		}
+
+	if (numeroLanzado < numeroPensado) {
+
+		imprimir("Numero lanzado era menor que el del programa")
+	}
+	
+</script>

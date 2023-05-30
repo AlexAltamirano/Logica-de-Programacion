@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA CALCULAR IMC</h1>
+
+<script>
+	function saltarlinea() {
+
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarlinea();
+	}
+
+	function calcularImc(peso,altura) {
+
+		var imc = peso / (altura * altura);
+		return(imc);
+
+	}
+
+	function calcularImcEficiente(peso,altura) {
+
+		var imc = peso / (altura * altura);
+		imprimir("El IMC calculado es: " + imc);
+	}
+
+	function calcularImcEficienteEntendible(peso,altura,nombre) {
+
+		var imc = peso / (altura * altura);
+		imprimir("El IMC calculado de " + nombre + " es" + imc);
+	}
+
+	function calcularImcPromedioLarga(peso1,altura1,nombre1,peso2,altura2,nombre2) {
+
+		var imc1 = peso1 / (altura1 * altura1);
+		var imc2 = peso2 / (altura2 * altura2);
+
+		imprimir("El promedio del imc calculado de " + nombre1 + " y " + nombre2 + " es: " + (imc1+imc2)/2);
+	}
+
+	function calcularImcPromedioFacil(peso,altura) {
+
+		var imc = peso / (altura * altura);
+
+		return(imc);
+
+	}
+
+	function calcularImcPromedioFacilEficiente(peso,altura) {
+
+		return(peso / (altura * altura));
+
+	}
+
+	//Con función 
+	var pesoAlex = 82;
+	var alturaAlex = 1.86;
+	//var imcAlex = pesoAlex / (alturaAlex * alturaAlex);
+	imcAlex = calcularImc(pesoAlex,alturaAlex);
+
+	imprimir("El IMC de Alex es: " + imcAlex);
+
+	//Sin función 
+	var pesoChris = 90;
+	var alturaChris = 2;
+	var imcChris = pesoAlex / (alturaAlex * alturaAlex);
+
+	imprimir("El IMC de Chris es: " + imcChris);
+
+	//Con función y eficiente
+	calcularImcEficiente(82,1.86);
+
+	//Con función y aun más eficiente y entendible
+	calcularImcEficienteEntendible(82,1.86,"Roberto");
+
+	//Promedio de indice de masa corporal de dos personas larga
+	calcularImcPromedioLarga(90,1.90,"Carlos",85,1.75,"Luis");
+	calcularImcPromedioLarga(80,1.80,"Gabriela",65,1.65,"Luisa");
+
+	//Promedio de indice de masa corporal de dos personas facil
+	var imcAlexFacil = calcularImcPromedioFacil(80,1.90);
+	var imcLuisFacil = calcularImcPromedioFacil(70,1.70);
+
+	imprimir("El promedio del imc calculado de Alex y Luis es: " + (imcAlexFacil+imcLuisFacil)/2);
+
+	//Promedio de indice de masa corporal de dos personas facil y eficiente
+	imprimir("El promedio del imc calculado de Alex y Luis es: " + (calcularImcPromedioFacilEficiente(85,1.95)+calcularImcPromedioFacilEficiente(75,1.75))/2);
+
+	//Interactuar con el usuario
+	var nombreInformado = prompt("informe su nombre");
+	var pesoInformado = prompt(nombreInformado + ", informe su peso");
+	var alturaInformado = prompt(nombreInformado + ", informe su altura");
+
+	imcCalculado = calcularImc(pesoInformado,alturaInformado);
+
+	imprimir(nombreInformado + ", su imc calculado es: " + imcCalculado);
+
+</script>
